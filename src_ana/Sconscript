@@ -1,0 +1,162 @@
+import os;
+
+
+Import('env')
+
+
+yields_bin = env.Program('yields',
+                         Glob('#src_lib/*.cpp') + Glob('yields.cpp'))
+Install("#bin", yields_bin)
+
+yields_range_bin = env.Program('yields_range',
+                         Glob('#src_lib/*.cpp') + Glob('yields_range.cpp'))
+Install("#bin", yields_range_bin)
+
+# DEPRECATED
+# draw_cs_bin = env.Program('draw_cs',
+#                          Glob('#src_lib/*.cpp') + Glob('draw_cs.cpp'))
+# Install("#bin", draw_cs_bin)
+
+draw_cs_range_bin = env.Program('draw_cs_range',
+                         Glob('#src_lib/*.cpp') + Glob('draw_cs_range.cpp'))
+Install("#bin", draw_cs_range_bin)
+
+draw_ay_range_bin = env.Program('draw_ay_range',
+                         Glob('#src_lib/*.cpp') + Glob('draw_ay_range.cpp'))
+Install("#bin", draw_ay_range_bin)
+
+fdc2_dist_bin = env.Program('fdc2_events_dist',
+                            Glob('#src_lib/*.cpp') + Glob('fdc2_events_dist.cpp'))
+Install("#bin", fdc2_dist_bin)
+
+theta_cut_sigmas_bin = env.Program('theta_cut_sigmas',
+                         Glob('#src_lib/*.cpp') + Glob('theta_cut_sigmas.cpp'))
+Install("#bin", theta_cut_sigmas_bin)
+
+cuts_config_test = env.Program('cuts_config_test',
+                         Glob('#src_lib/*.cpp') + Glob('cuts_config_test.cpp'))
+Install("#bin", cuts_config_test)
+
+signal_bg_coeffs = env.Program('signal_bg_coeffs',
+                         Glob('#src_lib/*.cpp') + Glob('signal_bg_coeffs.cpp'))
+Install("#bin", signal_bg_coeffs)
+
+hodf_acceptance = env.Program('hodf_acceptance',
+                              Glob('#src_lib/*.cpp') + Glob('hodf_acceptance.cpp'))
+Install("#bin", hodf_acceptance)
+
+upstream_acceptances = env.Program('upstream_acceptances',
+                                   Glob('#src_lib/*.cpp') + Glob('upstream_acceptances.cpp'))
+Install("#bin", upstream_acceptances)
+
+fdc2_acceptance = env.Program('fdc2_acceptance',
+                              Glob('#src_lib/*.cpp') + Glob('fdc2_acceptance.cpp'))
+Install("#bin", fdc2_acceptance)
+
+hodf_cut = env.Program('hodf_cut',
+                       Glob('#src_lib/*.cpp') + Glob('hodf_cut.cpp'))
+Install("#bin", hodf_cut)
+
+theta_cut = env.Program('theta_cut',
+                       Glob('#src_lib/*.cpp') + Glob('theta_cut.cpp'))
+Install("#bin", theta_cut)
+
+phi_cut = env.Program('phi_cut',
+                       Glob('#src_lib/*.cpp') + Glob('phi_cut.cpp'))
+Install("#bin", phi_cut)
+
+espri_e_cut = env.Program('espri_e_cut',
+                       Glob('#src_lib/*.cpp') + Glob('espri_e_cut.cpp'))
+Install("#bin", espri_e_cut)
+
+dsdcs_effs = env.Program('dsdcs_effs',
+                       Glob('#src_lib/*.cpp') + Glob('dsdcs_effs.cpp'))
+Install("#bin", dsdcs_effs)
+
+phi_cut_stats = env.Program('phi_cut_stats',
+                            Glob('#src_lib/*.cpp') + Glob('phi_cut_stats.cpp'))
+Install("#bin", phi_cut_stats)
+
+beam_stats = env.Program('beam_stats',
+                       Glob('#src_lib/*.cpp') + Glob('beam_stats.cpp'))
+Install("#bin", beam_stats)
+
+beam_profiles = env.Program('beam_profiles',
+                       Glob('#src_lib/*.cpp') + Glob('beam_profiles.cpp'))
+Install("#bin", beam_profiles)
+
+vertz_ang_dep = env.Program('vertz_ang_dep',
+                       Glob('#src_lib/*.cpp') + Glob('vertz_ang_dep.cpp'))
+Install("#bin", vertz_ang_dep)
+
+ecut_ang_dep = env.Program('ecut_ang_dep',
+                       Glob('#src_lib/*.cpp') + Glob('ecut_ang_dep.cpp'))
+Install("#bin", ecut_ang_dep)
+
+phi_cut_ang_dep = env.Program('phi_cut_ang_dep',
+                       Glob('#src_lib/*.cpp') + Glob('phi_cut_ang_dep.cpp'))
+Install("#bin", phi_cut_ang_dep)
+
+vertR_cut_ang_dep = env.Program('vertR_cut_ang_dep',
+                       Glob('#src_lib/*.cpp') + Glob('vertR_cut_ang_dep.cpp'))
+Install("#bin", vertR_cut_ang_dep)
+
+e_spectra = env.Program('e_spectra',
+                       Glob('#src_lib/*.cpp') + Glob('e_spectra.cpp'))
+Install("#bin", e_spectra)
+
+espri_e_cal = env.Program('espri_e_cal',
+                       Glob('#src_lib/*.cpp') + Glob('espri_e_cal.cpp'))
+Install("#bin", espri_e_cal)
+
+espri_nais_e_spectra = env.Program('espri_nais_e_spectra',
+                       Glob('#src_lib/*.cpp') + Glob('espri_nais_e_spectra.cpp'))
+Install("#bin", espri_nais_e_spectra)
+
+fwang_bg_src = env.Program('fwang_bg_src',
+                       Glob('#src_lib/*.cpp') + Glob('fwang_bg_src.cpp'))
+Install("#bin", fwang_bg_src)
+
+carbon_tgt_yields = env.Program('carbon_tgt_yields',
+                       Glob('#src_lib/*.cpp') + Glob('carbon_tgt_yields.cpp'))
+Install("#bin", carbon_tgt_yields)
+
+vertz_cut = env.Program('vertz_cut',
+                       Glob('#src_lib/*.cpp') + Glob('vertz_cut.cpp'))
+Install("#bin", vertz_cut)
+
+he4_bg_yields = env.Program('he4_bg_yields',
+                       Glob('#src_lib/*.cpp') + Glob('he4_bg_yields.cpp'))
+Install("#bin", he4_bg_yields)
+
+he4_carbon_bg_subtraction = env.Program('he4_carbon_bg_subtraction',
+                       Glob('#src_lib/*.cpp') + Glob('he4_carbon_bg_subtraction.cpp'))
+Install("#bin", he4_carbon_bg_subtraction)
+
+vertz_bg_coeffs = env.Program('vertz_bg_coeffs',
+                       Glob('#src_lib/*.cpp') + Glob('vertz_bg_coeffs.cpp'))
+Install("#bin", vertz_bg_coeffs)
+
+rdc_planes_eff = env.Program('rdc_planes_eff',
+                       Glob('#src_lib/*.cpp') + Glob('rdc_planes_eff.cpp'))
+Install("#bin", rdc_planes_eff)
+
+fdc0_planes_eff = env.Program('fdc0_planes_eff',
+                       Glob('#src_lib/*.cpp') + Glob('fdc0_planes_eff.cpp'))
+Install("#bin", fdc0_planes_eff)
+
+s1dc_planes_eff = env.Program('s1dc_planes_eff',
+                              Glob('#src_lib/*.cpp') + Glob('s1dc_planes_eff.cpp'))
+Install("#bin", s1dc_planes_eff)
+
+bdcs_eff = env.Program('bdcs_effs',
+                       Glob('#src_lib/*.cpp') + Glob('bdcs_effs.cpp'))
+Install("#bin", bdcs_eff)
+
+koning_glob_opt_params = env.Program('koning_glob_opt_params',
+                                     Glob('koning_glob_opt_params.cpp'))
+Install("#bin", koning_glob_opt_params)
+
+# Playground executable
+# rose = env.Program('rose', 'rose.cpp')
+# Install('#bin', rose)

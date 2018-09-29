@@ -1,0 +1,14 @@
+
+Import('env')
+
+
+scattree_bin = env.Program('scattree',
+                           ['dataset.cpp',
+                            '#src_lib/srccommon.cpp',
+                            '#src_lib/msgoutput.cpp',
+                            'scattree.cpp'])
+Install('#bin', scattree_bin)
+
+protontrajsim_bin = env.Program('protontrajsim',
+                                ['dataset.cpp', '#src_lib/srccommon.cpp', 'protontrajsim.cpp'])
+Install('#bin', protontrajsim_bin)

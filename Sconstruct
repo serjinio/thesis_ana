@@ -1,0 +1,37 @@
+
+
+import os
+import platform
+
+
+prefix = '/usr/local'
+ROOT_DIR_LINUX = '/home/serj/root/build'
+ROOT_DIR_MAC = '/usr/local/Cellar/root/6.12.04_3'
+BOOST_INCLUDE_DIR_MAC = '/usr/local/boost_1_59_0'
+BOOST_INCLUDE_DIR_LINUX = '/usr/include/boost'
+
+env = Environment(CXX='g++',
+                  CXXFLAGS='-std=c++1z -Wall -Wno-attributes -Wno-comment',
+                  CXXPATH='#src_ana')
+
+if platform.system() == 'Linux':
+    root_install_dir = ROOT_DIR_LINUX
+    env.Append(CPPATH=BOOST_INCLUDE_DIR_LINUX)
+elif platform.system() == 'Darwin':
+    boost_install_dir = BOOST_INCLUDE_DIR_MAC
+    root_install_dir = ROOT_DIR_MAC
+    env.Append(LIBPATH=os.path.join(boost_install_dir, 'stage/lib'))
+    env.Append(CPPPATH=boost_install_dir)
+
+env.ParseConfig(os.path.join(root_install_dir, 'bin/root-config') + ' --cflags --glibs')
+env.Append(CPPPATH='#include')
+
+env.Append(LIBS='boost_program_options')
+env.Append(LIBS='MathMore')
+env.Append(LIBS='Proof')
+
+# if 'release' not in COMMAND_LINE_TARGETS:
+#     env.Append(CCFLAGS = '-g -O0')
+
+SConscript('src_ana/Sconscript', exports='env prefix')
+SConscript('src/Sconscript', exports='env prefix')
